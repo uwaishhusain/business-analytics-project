@@ -20,7 +20,7 @@ Execution order:
 
 ---
 
-## Business Questions & SQL Queries
+## Example Business Query
 
 ---
 
@@ -30,9 +30,7 @@ Execution order:
 Helps management identify high-performing branches and compare performance across locations.
 
 ```SQL
-SELECT
-    b.branch_name,
-    SUM(t.amount) AS total_transaction_value
+SELECT b.branch_name, SUM(t.amount) AS total_transaction_value
 FROM transactions t
 JOIN customers c ON t.customer_id = c.customer_id
 JOIN branches b ON c.branch_id = b.branch_id
